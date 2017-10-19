@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1508327857 source:/home/mion/s/193/kdabrow6/Desktop/Policz_PI/main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1508444166 source:d:\studia\podstawy programowania\policz_pi\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdbool.h>
+	<limits.h>
+
