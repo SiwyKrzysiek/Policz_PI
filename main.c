@@ -16,12 +16,12 @@ int main()
     printf("Podaj liczbe losowan: ");
 
     int liczbaLosowan;
-    if (scanf("%d", &liczbaLosowan) != 1)
+    if (scanf("%d", &liczbaLosowan) != 1 || liczbaLosowan==INT_MAX) //Wczytanie liczby losowan i sprawdzenie jej poprawnosci
     {
         printf("\nNieprawidlowo wprowadzona liczba liczba\n");
         return 1;
     }
-    if(liczbaLosowan < 10)
+    if(liczbaLosowan < 10) //W przeciwnym wypadku nie da sie wypisywac wynikow co 10%
     {
         printf("\nMinimalna liczba losowan to 10\n");
         return 1;
@@ -33,7 +33,7 @@ int main()
     return 0;
 }
 
-double Losowa()
+double Losowa() //Losowa liczba z przedzialu [0, 1]
 {
     return (double)rand() / (double)RAND_MAX ;
 }
@@ -46,17 +46,17 @@ void PoliczPI(int liczbaLosowan)
 
     for (int i=1; i<=liczbaLosowan; i++)
     {
-        double x, y;
+        double x, y; //Wylosowanie punktu z kwadrata
         x = Losowa();
         y = Losowa();
 
-        if(x*x + y*y <= 1)
+        if(x*x + y*y <= 1) //Sprawdznie czy wylosowany punkt jest w kole
             wKole++;
         PI = 4.0*((double)wKole/(double)i);
 
-        if(i % dziesiecPr == 0) //Co dziesiêæ procent
+        if(i % dziesiecPr == 0) //Co dziesiec procent
         {
-            printf("%d%% - %d losowan PI = %f\n", i/dziesiecPr*10, i, PI);
+            printf("%d%% - %d losowan PI = %f\n", i/dziesiecPr*10, i, PI); //Wypisywanie wynikow
         }
     }
 }
